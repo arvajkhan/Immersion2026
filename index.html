@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linear Search with DOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Linear Search with JavaScript DOM</h2>
+
+  <p>Array: [10, 20, 30, 40, 50]</p>
+
+  <input type="number" id="target" placeholder="Enter number">
+  <button onclick="searchElement()">Search</button>
+
+  <div id="result"></div>
+
+  <script>
+    const arr = [10, 20, 30, 40, 50];
+
+    function searchElement() {
+      const target = Number(document.getElementById("target").value);
+      let index = -1;
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+          index = i;
+          break;
+        }
+      }
+
+      const result = document.getElementById("result");
+
+      if (index !== -1) {
+        result.innerHTML = `Element ${target} found at index ${index}`;
+      } else {
+        result.innerHTML = `Element ${target} not found`;
+      }
+    }
+  </script>
+
+</body>
+</html>
