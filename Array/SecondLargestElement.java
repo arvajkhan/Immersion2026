@@ -1,10 +1,17 @@
-import java.util.Arrays;
+class SecondLargestElement {
+    public boolean isPalindrome(String s) {
+        int left = 0;
+        int right = s.length() - 1;
 
-public class SecondLargestElement {
-    public static void main(String[] args) {
-        int[] secondLargest = {1, 2, 4, 1, 4, 2, 3};
+        while (left < right) {
+            if (Character.toLowerCase(s.charAt(left)) !=
+                Character.toLowerCase(s.charAt(right))) {
+                return false;
+            }
+            left++;
+            right--;
+        }
 
-        Arrays.sort(secondLargest);
-        
+        return true;
     }
 }
